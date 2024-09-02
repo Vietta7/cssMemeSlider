@@ -36,6 +36,7 @@ h3 {
     height: 54rem;
     border-radius: 1rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     overflow: hidden;
     background-color: #fff;
@@ -58,8 +59,10 @@ h3 {
 }
 
 .tabs label:hover {
-    border: 0.063rem solid black;
+    /* border: 0.063rem solid black; */
+    background-color: #696969;
 }
+
 
 .slider-cats {
     height: 100%;
@@ -97,6 +100,8 @@ input[type="radio"] {
     display: none;
 }
 
+
+
 .tabs-container {
     display: flex;
     flex-direction: column;
@@ -127,6 +132,13 @@ input[type="radio"] {
     display: block;
     /* opacity: 1;
     transform: translateX(0%); */
+  }
+  #CatLeonardo:checked ~ .cat .tabs label[for="CatLeonardo"],
+  #CatMunch:checked ~ .cat .tabs label[for="CatMunch"],
+  #CatVermeer:checked ~ .cat .tabs label[for="CatVermeer"],
+  #CatVincent:checked ~ .cat .tabs label[for="CatVincent"] {
+      border: 0.125rem solid black;
+      background-color: transparent; 
   }
   
   /* #CatLeonardo:checked ~ .slider-cats .cat:nth-of-type(1) h3,
