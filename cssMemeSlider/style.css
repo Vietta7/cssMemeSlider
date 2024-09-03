@@ -169,7 +169,7 @@ input:checked ~ .cat {
 
 /* Adaptive */
 
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
     .slider {
         max-width: 100%;
         margin: 0 2rem;
@@ -208,7 +208,7 @@ input:checked ~ .cat {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 31.25rem) {
     .slider {
         max-width: 100%;
         margin: 0 1rem;
@@ -220,7 +220,7 @@ input:checked ~ .cat {
     }
 }
 
-@media (max-width: 472px) {
+@media (max-width: 29.5rem) {
     .slider {
         max-width: 100%;
         margin: 0 0.5rem;
