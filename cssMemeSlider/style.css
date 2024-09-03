@@ -27,7 +27,6 @@ img {
 h3 {
     font-size: 1rem;
     padding-bottom: 3rem;
-    /* transition: opacity 0.5s ease, transform 0.5s ease; */
 }
 
 .slider {
@@ -55,14 +54,11 @@ h3 {
     border-radius: 50%;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .tabs label:hover {
-    /* border: 0.063rem solid black; */
     background-color: #696969;
 }
-
 
 .slider-cats {
     height: 100%;
@@ -73,9 +69,6 @@ h3 {
   
 .cat {
     display: none;
-    /* opacity: 0;
-    transform: translateX(100%);
-    transition: opacity 0.5s ease, transform 0.5s ease; */
 }
   
 .cat-content {
@@ -83,7 +76,6 @@ h3 {
     align-items: center;
     justify-content: space-between;
 }
-
 
 .cat img {
     width: 100%;
@@ -99,8 +91,6 @@ h3 {
 input[type="radio"] {
     display: none;
 }
-
-
 
 .tabs-container {
     display: flex;
@@ -124,28 +114,55 @@ input[type="radio"] {
     cursor: pointer;
 }
 
-  
+
   #CatLeonardo:checked ~ .cat:nth-of-type(1),
   #CatMunch:checked ~ .cat:nth-of-type(2),
   #CatVermeer:checked ~ .cat:nth-of-type(3),
   #CatVincent:checked ~ .cat:nth-of-type(4) {
     display: block;
-    /* opacity: 1;
-    transform: translateX(0%); */
-  }
+}
+
   #CatLeonardo:checked ~ .cat .tabs label[for="CatLeonardo"],
   #CatMunch:checked ~ .cat .tabs label[for="CatMunch"],
   #CatVermeer:checked ~ .cat .tabs label[for="CatVermeer"],
   #CatVincent:checked ~ .cat .tabs label[for="CatVincent"] {
-      border: 0.125rem solid black;
-      background-color: transparent; 
-  }
-  
-  /* #CatLeonardo:checked ~ .slider-cats .cat:nth-of-type(1) h3,
-#CatMunch:checked ~ .slider-cats .cat:nth-of-type(2) h3,
-#CatVermeer:checked ~ .slider-cats .cat:nth-of-type(3) h3,
-#CatVincent:checked ~ .slider-cats .cat:nth-of-type(4) h3 {
-    opacity: 1;
-    transform: translateY(0%);
-} */
+    border: 0.125rem solid black;
+    background-color: transparent; 
+}
 
+/* Animation */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+input:checked ~ .cat {
+    animation: slideOut 0.5s forwards; 
+}
+
+#CatLeonardo:checked ~ .cat:nth-of-type(1),
+#CatMunch:checked ~ .cat:nth-of-type(2),
+#CatVermeer:checked ~ .cat:nth-of-type(3),
+#CatVincent:checked ~ .cat:nth-of-type(4) {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideIn 0.5s forwards;
+}
